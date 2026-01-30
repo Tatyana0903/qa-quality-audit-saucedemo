@@ -1,0 +1,59 @@
+
+-- Q1. Top risks (by score)
+
+SELECT risk_id, title, area, risk_type, likelihood, impact, risk_score, priority, status
+FROM risks
+ORDER BY risk_score DESC, impact DESC;
+
+-- Q2. Critical & High risks only
+
+SELECT risk_id, title, area, risk_score, priority, status
+FROM risks
+WHERE priority IN ('Critical', 'High')
+ORDER BY risk_score DESC;
+
+-- Q3. Risk distribution by area
+
+SELECT area, COUNT(*) AS risk_count, AVG(risk_score)::numeric(10,2) AS avg_score
+FROM risks
+GROUP BY area
+ORDER BY risk_count DESC, avg_score DESC;
+
+-- Q4. Risk distribution by type
+
+SELECT risk_type, COUNT(*) AS risk_count, AVG(risk_score)::numeric(10,2) AS avg_score
+FROM risks
+GROUP BY risk_type
+ORDER BY risk_count DESC, avg_score DESC;
+
+-- Q5. Coverage gaps: risks without mitigations
+
+SELECT r.risk_id, r.title, r.area, r.priority, r.risk_score
+FROM risks r
+LEFT JOIN risk_mitigations m ON m.risk_id = r.risk_id
+WHERE m.mitigation_id IS NULL
+ORDER BY r.risk_score DESC;
+
+-- Q6. Data quality check: suspicious priority vs score
+-- (high score should usually be High/Critical)
+
+SELECT risk_id, title, risk_score, priority
+FROM risks
+WHERE risk_score >= 16
+  AND priority NOT IN ('High','Critical')
+ORDER BY risk_score DESC;
+
+-- Q7. Check constraints: invalid ranges (should return 0 rows)
+
+SELECT *
+FROM risks
+WHERE likelihood NOT BETWEEN 1 AND 5
+   OR impact NOT BETWEEN 1 AND 5;
+
+-- Q8. Mitigation coverage count per risk
+
+SELECT r.risk_id, r.title, COUNT(m.mitigation_id) AS mitigations_count
+FROM risks r
+LEFT JOIN risk_mitigations m ON m.risk_id = r.risk_id
+GROUP BY r.risk_id, r.title
+ORDER BY mitigations_count ASC, r.risk_id;
