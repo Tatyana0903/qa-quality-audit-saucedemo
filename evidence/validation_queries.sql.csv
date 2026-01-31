@@ -1,0 +1,8 @@
+"risk_id","title","area","risk_type","risk_score","priority","status"
+"4","Checkout validation gaps","Checkout","Functional",16,"Critical","Open"
+"1","Auth boundary issue (access without login)","Auth","Security",15,"Critical","Open"
+"3","Incorrect cart totals / item list inconsistency","Cart","Functional",12,"High","Open"
+"7","Flaky UI behavior impacting automation","UI","Usability",12,"High","Open"
+"2","Session / cart state leakage","Cart","Data",10,"High","Open"
+"6","Sorting incorrect or inconsistent","Inventory","Functional",9,"Medium","Open"
+"5","Ability to checkout with empty cart","Checkout","Security",8,"Medium","Open"
