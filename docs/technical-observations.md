@@ -31,3 +31,9 @@ The issue is likely related to:
 
 ### Conclusion
 This is considered a non-blocking technical observation and does not require immediate action.
+
+### Evidence
+
+The following screenshot shows a `401 Unauthorized` response:
+
+![401 Unauthorized](screenshots/401-unauthorized.png)
