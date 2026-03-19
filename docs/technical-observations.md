@@ -36,4 +36,4 @@ This is considered a non-blocking technical observation and does not require imm
 
 The following screenshot shows a `401 Unauthorized` response:
 
-![401 Unauthorized](screenshots/401-unauthorized.png)
+![401 Unauthorized](401-unauthorized.png)
