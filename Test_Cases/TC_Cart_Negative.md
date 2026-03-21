@@ -15,6 +15,8 @@ User is not logged in.
 - Access to cart is blocked for unauthenticated user
 - Error message is displayed if application supports it
 
+  **Actual result:**
+  - The user does not have access to the page and is redirected to the login page
 ---
 
 ## TC-CART-NEG-002 - User cannot access inventory page without login
@@ -32,6 +34,8 @@ User is not logged in.
 - Inventory page is not accessible without authentication
 - Proper error message is displayed
 
+ **Actual result:**
+- The user does not have access to the inventory page and is redirected to the login page
 ---
 
 ## TC-CART-NEG-003 - Cart badge is not displayed when cart is empty
@@ -51,6 +55,8 @@ Cart is empty
 - Cart badge is not displayed
 - No incorrect value such as "0" or "1" is shown
 
+**Actual result:**
+- The cart icon remains empty if there are no added products in it
 ---
 
 ## TC-CART-NEG-004 - Remove button is not displayed for product not added to cart
@@ -70,6 +76,8 @@ Product has not been added to cart
 - "Remove" button is not displayed
 - "Add to cart" button remains available
 
+**Actual result:**
+- Remowe cart is not displayed if there no added goods to the cart
 ---
 
 ## TC-CART-NEG-005 - User cannot proceed to checkout from empty cart
@@ -87,3 +95,7 @@ Cart is empty
 **Expected result:**
 - User cannot proceed with checkout for empty cart
 - System blocks invalid flow or keeps user on current step
+
+  **Actual result:**
+  - Checkout is enabled with empty cart
+  - User can proceed with checkout for empty cart
