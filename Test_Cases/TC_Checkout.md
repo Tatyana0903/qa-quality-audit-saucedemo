@@ -1,7 +1,8 @@
 Test Cases - Checkout
---
 
-**Positive scenarios**
+
+Positive scenarios
+--
 
 **Related risk:** 
 
@@ -158,7 +159,8 @@ User is redirected to inventory page
 
 --
 
-**Negative scenarios**
+Negative scenarios
+--
 
 ## TC-CHECKOUT-NEG-001 – User cannot continue checkout with empty First Name
 --
