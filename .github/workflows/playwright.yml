@@ -33,3 +33,11 @@ jobs:
         run: |
           cd automation/playwright
           npx playwright test
+
+          - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+        name: playwright-report
+        path: automation/playwright/playwright-report
+        retention-days: 7
