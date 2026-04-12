@@ -2,7 +2,8 @@ name: Run API tests
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -21,9 +22,17 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
-      - name: Run Booking - CI folder
+      - name: Check repository structure
         run: |
-          newman run "API/collection/qa.tests.postman_collection.json" \
-            -e "API/environments/qa_environment.json" \
+          echo "Current directory:"
+          pwd
+          echo ""
+          echo "Repository files:"
+          ls -R
+
+      - name: Run Postman collection
+        run: |
+          newman run API/collection/qa.tests.postman_collection.json \
+            -e API/environments/qa_environment.json \
             --folder "Booking - CI" \
             --reporters cli
