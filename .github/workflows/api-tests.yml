@@ -32,7 +32,7 @@ jobs:
 
       - name: Run Postman collection
         run: |
-          newman run API/collection/qa-tests.postman_collection.json \
+          newman run API/collection/qa.tests.postman_collection.json \
             -e API/environments/qa_environment.json \
             --folder "Booking - CI" \
             --reporters cli
