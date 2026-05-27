@@ -7,6 +7,8 @@
 - Real defects identified and documented  
 - CI pipeline with automated test execution (GitHub Actions)  
 - Stable tests with retries and expected failure handling
+
+  ![API Tests](https://github.com/Tatyana0903/qa-quality-audit-saucedemo/actions/workflows/api-tests.yml/badge.svg)
   
 ## Project Goal
 
