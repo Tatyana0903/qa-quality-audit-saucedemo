@@ -6,7 +6,8 @@
 ## Key Highlights
 
 - Risk-based QA approach focused on business-critical flows  
-- Combination of manual testing and UI automation (Playwright)  
+- Combination of manual testing and UI automation (Playwright)
+-  API regression tests executed with Newman and GitHub Actions
 - Real defects identified and documented  
 - CI pipeline with automated test execution (GitHub Actions)  
 - Stable tests with retries and expected failure handling
