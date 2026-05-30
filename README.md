@@ -1,13 +1,18 @@
 ![CI](https://github.com/Tatyana0903/qa-quality-audit-saucedemo/actions/workflows/playwright.yml/badge.svg)
 
+ ![API Tests](https://github.com/Tatyana0903/qa-quality-audit-saucedemo/actions/workflows/api-tests.yml/badge.svg)
+  
+
 ## Key Highlights
 
 - Risk-based QA approach focused on business-critical flows  
-- Combination of manual testing and UI automation (Playwright)  
+- Combination of manual testing and UI automation (Playwright)
+-  API regression tests executed with Newman and GitHub Actions
 - Real defects identified and documented  
 - CI pipeline with automated test execution (GitHub Actions)  
 - Stable tests with retries and expected failure handling
-  
+
+ 
 ## Project Goal
 
 The goal of this project is to demonstrate a structured QA approach to testing a real web application by combining:
